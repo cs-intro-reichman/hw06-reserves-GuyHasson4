@@ -79,7 +79,7 @@ public class Runigram {
 		//// Replace the following statement with your code
 		Color horImage[][] = new Color[image.length][image[0].length];
 		for (int i = 0; i < image.length; i++) {
-			for (int j = 0; j < image[0].length; j++) {
+			for (int j = 0; j < image[i].length; j++) {
 				horImage[i][j] = image[i][horImage[i].length - 1 - j];
 			}
 		}
@@ -93,7 +93,7 @@ public class Runigram {
 		//// Replace the following statement with your code
 		Color vertImage[][] = new Color[image.length][image[0].length];
 		for (int i = 0; i < image.length; i++) {
-			for (int j = 0; j < image[0].length; j++) {
+			for (int j = 0; j < image[i].length; j++) {
 			vertImage[i][j] = image[vertImage.length - 1 - i][j];
 			}
 		}
@@ -117,7 +117,7 @@ public class Runigram {
 		//// Replace the following statement with your code
 		Color[][] lumImage = new Color[image.length][image[0].length];
 		for (int i = 0; i < lumImage.length; i++) {
-			for (int j = 0; j < lumImage[0].length; j++) {
+			for (int j = 0; j < lumImage[i].length; j++) {
 				lumImage[i][j] = luminance(image[i][j]);
 			}
 		}
@@ -164,7 +164,7 @@ public class Runigram {
 		//// Replace the following statement with your code
 		Color[][] blendedImage = new Color[image2.length][image2[0].length];
 			for (int i = 0; i < image2.length; i++) {
-				for (int j = 0; j < image2[0].length; j++) {
+				for (int j = 0; j < image2[i].length; j++) {
 					blendedImage[i][j] = blend(image1[i][j], image2[i][j], alpha); 
 			}
 		}
