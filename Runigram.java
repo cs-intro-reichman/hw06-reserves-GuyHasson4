@@ -5,7 +5,7 @@ import java.awt.Color;
 /** A library of image processing functions. */
 public class Runigram {
 
-	private static final Color Red = null;
+
 
 	public static void main(String[] args) {
 	    
@@ -39,9 +39,11 @@ public class Runigram {
 		in.readInt();
 		// Creates the image array
 		Color[][] image = new Color[numRows][numCols];
+		Color color = new Color(0, 0, 0);
 		for (int i = 0; i < numRows; i++) {
 			for (int j = 0; j < numCols; j++) {
-				image[i][j] = new Color(in.readInt(), in.readInt(), in.readInt());
+				color = new Color(in.readInt(), in.readInt(), in.readInt());
+				image[i][j] = color;
 			}
 			
 		}
@@ -133,7 +135,7 @@ public class Runigram {
 		Color[][] resizedImage = new Color[height][width];
 		for (int i = 0; i < height; i++) {
 			for (int j = 0; j < width; j++) {
-				resizedImage[i][j] = image[i * (image.length / height)][j * (image[0].length / width)];
+				resizedImage[i][j] = image[i * image.length / height][j * image[0].length / width];
 			}
 		}
 		return resizedImage;
